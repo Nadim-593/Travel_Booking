@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* ─── CSS Custom Properties (Brand Colors) ─────────────────────────── */
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+
+  /* Deshiyo Travels Brand Palette */
+  --deshi-green: #16a34a;        /* emerald-600: forests, nature, trust */
+  --deshi-green-dark: #15803d;   /* emerald-700: hover states */
+  --deshi-green-light: #dcfce7;  /* emerald-100: light backgrounds */
+  --deshi-amber: #d97706;        /* amber-600: warmth, sunsets, BDT prices */
+  --deshi-amber-light: #fef3c7;  /* amber-100: price tag backgrounds */
+  --deshi-slate: #0f172a;        /* slate-900: primary dark text */
+  --deshi-muted: #64748b;        /* slate-500: secondary text */
+  --deshi-border: #e2e8f0;       /* slate-200: borders */
+  --deshi-surface: #f8fafc;      /* slate-50: card/section backgrounds */
+}
+
+/* ─── Base Styles ────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Tailwind Theme Extension ───────────────────────────────────────── */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-deshi-green: var(--deshi-green);
+  --color-deshi-green-dark: var(--deshi-green-dark);
+  --color-deshi-green-light: var(--deshi-green-light);
+  --color-deshi-amber: var(--deshi-amber);
+  --color-deshi-amber-light: var(--deshi-amber-light);
+  --color-deshi-slate: var(--deshi-slate);
+  --color-deshi-muted: var(--deshi-muted);
+  --color-deshi-border: var(--deshi-border);
+  --color-deshi-surface: var(--deshi-surface);
+}
+
+/* ─── Utility Classes ────────────────────────────────────────────────── */
+
+/* Section padding — keeps vertical rhythm consistent site-wide */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Container — our standard max-width wrapper */
+.container-custom {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Section heading typography */
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--deshi-slate);
+  line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--deshi-muted);
+  margin-top: 0.5rem;
+  max-width: 38rem;
+  line-height: 1.6;
+}
+
+/* Green accent pill label above section headings */
+.section-label {
+  display: inline-block;
+  background-color: var(--deshi-green-light);
+  color: var(--deshi-green);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+}
+
+/* Card shared base */
+.card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid var(--deshi-border);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ─── Scrollbar (subtle) ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
